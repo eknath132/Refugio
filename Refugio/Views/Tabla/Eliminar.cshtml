@@ -1,0 +1,38 @@
+﻿@model  Refugio.Models.ViewModels.TablaViewModel
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("Eliminar", "Tabla", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(d => d.ID)
+            <div>
+                @Html.LabelFor(d => d.NOMBRE)
+                @Html.TextBoxFor(d => d.NOMBRE, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.NOMBRE, null, new { @class = "messageError" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.RAZA)
+                @Html.TextBoxFor(d => d.RAZA, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.RAZA, null, new { @class = "messageError" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.EDAD)
+                @Html.TextBoxFor(d => d.EDAD, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.EDAD, null, new { @class = "messageError" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.CASTRADO)
+                @Html.TextBoxFor(d => d.CASTRADO, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.CASTRADO, null, new { @class = "messageError" })
+                <br />
+            </div>
+        </div>
+        <div style="text-align:right; margin:15px">
+            <input value="Guardar" class="btn btn-primary" type="submit" />
+        </div>
+    </div>
+}

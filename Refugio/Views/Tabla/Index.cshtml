@@ -1,0 +1,49 @@
+﻿@model List<Refugio.Models.ViewModels.ListTablaViewModel>
+@{
+    ViewBag.Title = "Lista de gatos";
+}
+
+<h1></h1>
+<div class="jumbotron" style="background-image:url(../../Imagenes/PORTADA_Articulo.jpg); background-repeat:no-repeat; background-size:cover;">
+    <h1 style="color:#ffffff; text-align:center">@ViewBag.Title</h1>
+    <br />
+    <br />  
+    <br />
+    <br />
+    <br />
+</div>
+
+<div class="row" style="padding:5px">
+    <div style="text-align:right">
+        <a href="../Tabla/Nuevo" class="btn btn-primary"> Nuevo</a>
+    </div>
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>Nombre</th>
+                <th>Raza</th>
+                <th>Edad</th>
+                <th>Castrado</th>
+                <th>Acciones</th>
+
+            </tr>
+            @foreach(var gato in Model)
+            {
+                <tr>
+                    <td>@gato.NOMBRE</td>
+                    <td>@gato.RAZA</td>
+                    <td>@gato.EDAD</td>
+                    <td>@gato.CASTRADO</td>
+                    <td>
+                        <a class="btn btn-default" href="~/Tabla/Editar/@gato.ID"> Editar </a>
+                        <a class="btn btn-danger" href="~/Tabla/Eliminar/@gato.ID"> Eliminar </a>
+
+                    </td>
+                </tr>
+            }
+            
+        </table>
+
+    </div>
+
+</div>

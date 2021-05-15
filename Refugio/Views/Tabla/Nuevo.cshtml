@@ -1,0 +1,45 @@
+﻿@model  Refugio.Models.ViewModels.TablaViewModel
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("Nuevo", "Tabla", FormMethod.Post))
+{
+ <div class="row">
+     <div class="col-md-12">
+         <div>
+             @Html.LabelFor(d => d.NOMBRE)
+             @Html.TextBoxFor(d => d.NOMBRE, "", new { @class = "form-control" })
+             @Html.ValidationMessageFor(d => d.NOMBRE, null, new { @class = "messageError" })
+         </div>
+         <div>
+             @Html.LabelFor(d => d.RAZA)
+             @Html.TextBoxFor(d => d.RAZA, "", new { @class = "form-control" })
+             @Html.ValidationMessageFor(d => d.RAZA, null, new { @class = "messageError" })
+         </div>
+         <div>
+             @Html.LabelFor(d => d.EDAD)
+             @Html.TextBoxFor(d => d.EDAD, "", new { @class = "form-control" })
+             @Html.ValidationMessageFor(d => d.EDAD, null, new { @class = "messageError" })
+         </div>
+         <div>
+             @Html.LabelFor(d => d.CASTRADO)
+             <br />
+             @Html.DropDownListFor(d => d.CASTRADO,new List<SelectListItem>
+               { new SelectListItem{Text="Si", Value="S"},
+                 new SelectListItem{Text="No", Value="N"}}, "Elija una opción")
+             @Html.ValidationMessageFor(d => d.CASTRADO, null, new { @class = "messageError" })
+             <br />
+         </div>
+     <div style="display:flex; margin-top:50px" class="col-md-12">
+         <div style="text-align:left; margin:15px; height:50px" class="col-md-6">
+             <a class="btn btn-primary" href="~/Tabla/Index" > Atras</a>
+         </div>
+         <div style="text-align:right; margin:15px" class="col-md-6">
+             <input value="Guardar" class="btn btn-primary" type="submit" />
+         </div>
+     </div>
+     </div>
+ </div>
+}
