@@ -23,6 +23,24 @@ namespace Refugio.Filters
                     filterContext.HttpContext.Response.Redirect("~/Home/index");
                 }
             }
+            if (oUser?.USUARIO == "refugio@gmail.com")
+            {
+                if (filterContext.Controller is AccessController is true)
+                {
+                    filterContext.HttpContext.Response.Redirect("~/Loguin/index");
+                }
+            }
+            if (oUser?.USUARIO != "refugio@gmail.com")
+            {
+                if (filterContext.Controller is LoguinController is true)
+                {
+                    filterContext.HttpContext.Response.Redirect("~/Tabla/index");
+                }
+            }
+
+
+
+
 
             base.OnActionExecuting(filterContext);
         }

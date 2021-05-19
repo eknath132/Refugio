@@ -31,12 +31,14 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content;">
         @RenderBody()
-        <hr />
-        <footer style="text-align:center">
-            <p>&copy; @DateTime.Now.Year - Refugio de silvia</p>
-        </footer>
+        <div class="col-md-12">
+            <hr />
+            <footer style="text-align:center">
+                <p>&copy; @DateTime.Now.Year - Refugio de silvia</p>
+            </footer>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

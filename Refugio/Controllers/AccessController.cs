@@ -1,4 +1,5 @@
 ﻿using Refugio.Models;
+using Refugio.Models.SessionLoguin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace Refugio.Controllers
         public ActionResult Enter(string usuario, string pass)
         {
             string ePass = Encrypt.GetSHA256(pass);
+            string Usuario = "refugio@gmail.com";
             try
             {
                 using (refugioEntities db = new refugioEntities())
@@ -26,21 +28,24 @@ namespace Refugio.Controllers
                     var lst = from d in db.Adm
                               where d.USUARIO == usuario && d.PASS == ePass
                               select d;
-                    var messageError = "Usuario Invalido";
-                    if (lst.Count() > 0)
+
+                    var User = lst.First();
+                    if (User.USUARIO == Usuario)
                     {
                         Session["User"] = lst.First();
-                        return Content("1");
+                        return Content("Logueado correctamente, Cambie su usuario y contraseña");
                     }
+
                     else
                     {
-                        return Content(messageError);
+                        Session["User"] = lst.First();
+                        return Content("Logueado correctamente!");
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return Content("Ocurrio un error" + ex.Message);
+                return Content("No hay un usuario registrado con esa cuenta");
             }
         }
     }

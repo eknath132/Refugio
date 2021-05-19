@@ -2,10 +2,12 @@
     ViewBag.Title = "Refugio de silvia";
 }
 
-<div class="jumbotron" style="background-image:url(../../Imagenes/PORTADA_Articulo.jpg); background-repeat:no-repeat; background-size:cover;">
-    <h1 style="color:#ffffff">@ViewBag.Title</h1>
-    <p class="lead" style="color:#000000">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="~/tabla" class="btn btn-primary btn-lg">Nuestros gatos &raquo;</a></p>
+<div style="background-image:url(../../Imagenes/Portada.jpeg); background-repeat:no-repeat; background-size:cover; width:100%; height:350px">
+    <h1 style="color:#ffffff; margin-bottom:100px; text-align:center">@ViewBag.Title</h1>
+    <div class="col-md-6">
+        <p class="lead" style="color:#ffffff">Hoy en día el refugio se encarga del rescate de gatos, tenemos un número constante de 70 gatos (adultos y bebes) entre el refugio y tránsitos.</p>
+        <p><a href="~/Home/ListCat" class="btn btn-primary btn-lg">Nuestros gatos &raquo;</a></p>
+    </div>
 </div>
 <div class="col-md-6">
     <div style="text-align:center">
@@ -21,7 +23,7 @@
 </div>
 <div class="col-md-6">
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:30%; width:100%">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -33,15 +35,15 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="~/Imagenes/portada.jpg" alt="Chania" />
+                <img src="~/Imagenes/portada.jpg" alt="Chania" style="image-resolution:from-image"/>
             </div>
 
             <div class="item">
-                <img src="~/Imagenes/portada.jpg" alt="Chania" />
+                <img src="~/Imagenes/Foto1.jpg" alt="Chania" />
             </div>
 
             <div class="item">
-                <img src="~/Imagenes/PORTADA_Articulo.jpg" alt="Flower" />
+                <img src="~/Imagenes/Foto2.jpg" alt="Flower" />
             </div>
 
             <div class="item">
@@ -62,7 +64,7 @@
 </div>
 <div class="col-md-6" style="margin-bottom:100px">
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarouselSecond" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -91,11 +93,11 @@
         </div>
 
         <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <a class="left carousel-control" href="#myCarouselSecond" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Anterior</span>
         </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <a class="right carousel-control" href="#myCarouselSecond" role="button" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Siguiente</span>
         </a>

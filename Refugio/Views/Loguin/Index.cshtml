@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Administrador";
+}
+<div class="col-md-4">
+    <div class="row">
+        <form id="frm">
+            <div class="col-lg-6 col col-lg-offset-3">
+                Usuario
+                <input type="text" name="usuario" />
+                Contraseña
+                <input type="password" name="pass" />
+                Reptir Contraseña
+                <input type="password" name="passRepeat"/>
+                <input type="submit" class="btn btn-success" value="Entrar" />
+            </div>
+        </form>
+
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+    $(document).ready(function () {
+        $( "#frm" ).submit(function (e) {
+            e.preventDefault();
+            url = "@Url.Content("~/Loguin/SessionEnter")";
+            parametros = $( this ).serialize();
+
+            $.post(url, parametros, function (data) {
+                if (data == "Logueado correctamente!") {
+                    document.location.href = "@Url.Content("~/Tabla/Index")";
+                }
+                else {
+                    alert(data)
+                }
+            })
+        })
+    })
+    </script>
+}
+

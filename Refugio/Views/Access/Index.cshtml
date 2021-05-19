@@ -2,19 +2,26 @@
 @{
     ViewBag.Title = "Administrador";
 }
-
-<div class="row">
-    <form id="frm">
-        <div class="col-lg-6 col col-lg-offset-3" >
-            Usuario
-            <input type="text" name="usuario"/>
-            Contraseña
-            <input type="password" name="pass" />
-            <input type="submit" class="btn btn-success" value="Entrar" />
-        </div>
-    </form>
-
+<div class="col-md-4"></div>
+<div class="col-md-4" style="align-items:center">
+    <div class="row">
+        <form id="frm">
+            <div class="col-lg-12">
+                Usuario
+                <input type="text" name="usuario" style="margin-bottom:20px" class="form-control"/>
+             </div>
+            <div class="col-lg-12">
+                Contraseña
+               <input type="password" name="pass" style="margin-bottom:20px" class="form-control"/>
+            </div>
+            <div class="col-lg-12" style="text-align:end">
+                <input type="submit" class="btn btn-success" value="Entrar"/>
+            </div>
+        </form>
+    </div>
 </div>
+<div class="col-md-4"></div>
+
 
 @section scripts
 {
@@ -26,8 +33,11 @@
             parametros = $( this ).serialize();
 
             $.post(url, parametros, function (data) {
-                if (data == "1") {
-                    document.location.href = "@Url.Content("~/Tabla/Index")";
+                if (data == "Logueado correctamente, Cambie su usuario y contraseña") {
+                    document.location.href = "@Url.Content("~/Loguin/Index")";
+                }
+                if (data == "Logueado correctamente!") {
+                    document.location.href= "@Url.Content("~/Tabla/Index")"
                 }
                 else {
                     alert(data)
