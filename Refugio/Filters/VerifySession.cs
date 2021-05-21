@@ -38,10 +38,6 @@ namespace Refugio.Filters
                 }
             }
 
-
-
-
-
             base.OnActionExecuting(filterContext);
         }
     }

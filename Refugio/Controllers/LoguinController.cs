@@ -35,10 +35,9 @@ namespace Refugio.Controllers
 
                 {
                     {
-                        var User = db.Adm.Find(19);
+                        var User = db.Adm.Find(23);
                         db.Adm.Remove(User);
                         db.SaveChanges();
-
 
                         Models.Adm oUser = new Models.Adm();
                         oUser.USUARIO = usuario;
