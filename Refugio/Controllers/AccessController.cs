@@ -19,7 +19,7 @@ namespace Refugio.Controllers
         public ActionResult Enter(string usuario, string pass)
         {
             string ePass = Encrypt.GetSHA256(pass);
-            string Usuario = "refugio@gmail.com";
+            string Usuario = "admin";
             try
             {
                 using (refugioEntities db = new refugioEntities())

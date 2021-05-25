@@ -35,11 +35,12 @@ namespace Refugio.Controllers
 
                 {
                     {
-                        var User = db.Adm.Find(23);
+                        var User = db.Adm.Find(1);
                         db.Adm.Remove(User);
                         db.SaveChanges();
 
                         Models.Adm oUser = new Models.Adm();
+                        oUser.ID = 1;
                         oUser.USUARIO = usuario;
                         oUser.PASS = passVerify;
                         db.Adm.Add(oUser);

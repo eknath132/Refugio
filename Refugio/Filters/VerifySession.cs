@@ -20,17 +20,17 @@ namespace Refugio.Filters
             {
                 if(filterContext.Controller is TablaController is true)
                 {
-                    filterContext.HttpContext.Response.Redirect("~/Home/index");
+                    filterContext.HttpContext.Response.Redirect("~/Access/index");
                 }
             }
-            if (oUser?.USUARIO == "refugio@gmail.com")
+            if (oUser?.USUARIO == "admin")
             {
                 if (filterContext.Controller is AccessController is true)
                 {
                     filterContext.HttpContext.Response.Redirect("~/Loguin/index");
                 }
             }
-            if (oUser?.USUARIO != "refugio@gmail.com")
+            if (oUser?.USUARIO != "admin")
             {
                 if (filterContext.Controller is LoguinController is true)
                 {
