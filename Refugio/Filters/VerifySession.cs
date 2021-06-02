@@ -27,12 +27,12 @@ namespace Refugio.Filters
             {
                 if (filterContext.Controller is AccessController is true)
                 {
-                    filterContext.HttpContext.Response.Redirect("~/Loguin/index");
+                    filterContext.HttpContext.Response.Redirect("~/Login/index");
                 }
             }
             if (oUser?.USUARIO != "admin")
             {
-                if (filterContext.Controller is LoguinController is true)
+                if (filterContext.Controller is LoginController is true)
                 {
                     filterContext.HttpContext.Response.Redirect("~/Tabla/index");
                 }

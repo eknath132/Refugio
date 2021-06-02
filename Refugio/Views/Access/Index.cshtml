@@ -34,7 +34,7 @@
 
             $.post(url, parametros, function (data) {
                 if (data == "Logueado correctamente, Cambie su usuario y contraseña") {
-                    document.location.href = "@Url.Content("~/Loguin/Index")";
+                    document.location.href = "@Url.Content("~/Login/Index")";
                 }
                 if (data == "Logueado correctamente!") {
                     document.location.href= "@Url.Content("~/Tabla/Index")"
