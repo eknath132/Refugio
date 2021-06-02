@@ -35,7 +35,7 @@
     $(document).ready(function () {
         $( "#frm" ).submit(function (e) {
             e.preventDefault();
-            url = "@Url.Content("~/Loguin/SessionEnter")";
+            url = "@Url.Content("~/Login/SessionEnter")";
             parametros = $( this ).serialize();
 
             $.post(url, parametros, function (data) {

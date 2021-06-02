@@ -130,7 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccessController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoguinController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TablaController.cs" />
     <Compile Include="Encrypt.cs" />
     <Compile Include="Filters\VerifySession.cs" />
@@ -236,7 +236,7 @@
     <Content Include="Views\Tabla\Editar.cshtml" />
     <Content Include="Views\Tabla\Eliminar.cshtml" />
     <Content Include="Views\Access\Index.cshtml" />
-    <Content Include="Views\Loguin\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Refugio.Controllers
 {
-    public class LoguinController : Controller
+    public class LoginController : Controller
     {
         // GET: Loguin
         public ActionResult Index()
