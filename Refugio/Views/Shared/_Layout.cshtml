@@ -29,6 +29,11 @@
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Lista de gatos", "ListCat", "Home")</li>
+                    @if (Session["User"] != null)
+                    {
+                        <li>@Html.ActionLink("Cerrar Sesion", "LogOff", "Cerrar")</li>
+
+                    }
                 </ul>
             </div>
         </div>

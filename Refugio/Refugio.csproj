@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccessController.cs" />
+    <Compile Include="Controllers\CerrarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TablaController.cs" />
@@ -175,6 +176,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Imagenes\Foto1.jpg" />
     <Content Include="Imagenes\Foto2.jpg" />
+    <Content Include="Imagenes\gatoContact.jpg" />
     <Content Include="Imagenes\Portada.jpeg" />
     <Content Include="Imagenes\portada.jpg" />
     <Content Include="Imagenes\PORTADA_Articulo.jpg" />
@@ -241,6 +243,7 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Cerrar\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
