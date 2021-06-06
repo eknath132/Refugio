@@ -18,19 +18,19 @@ namespace Refugio.Controllers
 
         public ActionResult Enter(string usuario, string pass)
         {
-            string ePass = Encrypt.GetSHA256(pass);
-            string Usuario = "admin";
+            string password = "admin";
             try
             {
                 using (refugioEntities db = new refugioEntities())
 
                 {
                     var lst = from d in db.Adm
-                              where d.USUARIO == usuario && d.PASS == ePass
+                              where d.USUARIO == usuario
                               select d;
 
                     var User = lst.First();
-                    if (User.USUARIO == Usuario)
+
+                    if (User.PASS == password )
                     {
                         Session["User"] = lst.First();
                         return Content("Logueado correctamente, Cambie su usuario y contraseña");

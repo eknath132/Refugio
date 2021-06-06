@@ -14,10 +14,11 @@ namespace Refugio.Controllers
         {
             return View();
         }
-        public ActionResult SessionEnter(string usuario, string pass, string passRepeat)
+        public ActionResult SessionEnter(string pass, string passRepeat)
         {
             string ePass = Encrypt.GetSHA256(pass);
             string ePassRepeat= Encrypt.GetSHA256(passRepeat);
+            string usuario = "admin";
 
             string passVerify = null;
             try
@@ -34,30 +35,25 @@ namespace Refugio.Controllers
                 using (refugioEntities db = new refugioEntities())
 
                 {
-                    {
-                        var User = db.Adm.Find(1);
-                        db.Adm.Remove(User);
-                        db.SaveChanges();
-
-                        Models.Adm oUser = new Models.Adm();
-                        oUser.ID = 1;
-                        oUser.USUARIO = usuario;
-                        oUser.PASS = passVerify;
-                        db.Adm.Add(oUser);
-                        db.SaveChanges();
-
-                        var lst = from d in db.Adm
-                                  where d.USUARIO == usuario && d.PASS == ePass
-                                  select d;
-                        if (lst.Count() > 0)
+                        if (ModelState.IsValid)
                         {
-                            Session["User"] = lst.First();
-                            return Content("Logueado correctamente!");
+                            {
+                                var oUser = db.Adm.Find(1);
+                                oUser.PASS = passVerify;
+                                db.Entry(oUser).State = System.Data.Entity.EntityState.Modified;
+                                db.SaveChanges();
+
                         }
-
-                        return Redirect("~/Tabla/Index");
-
+                           var lst = from d in db.Adm
+                                where d.USUARIO == usuario && d.PASS == ePass
+                                select d;
+                            if (lst.Count() > 0)
+                           {
+                               Session["User"] = lst.First();
+                               return Content("Logueado correctamente!");
+                            }
                     }
+                    return Redirect("~/Tabla/Index");
                 }
             }
             catch (Exception ex)
