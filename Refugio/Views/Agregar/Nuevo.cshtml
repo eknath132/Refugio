@@ -2,28 +2,25 @@
 @{
     ViewBag.Title = "Administrador";
 }
-<div class="col-md-4"></div>
 
-<div class="col-md-4">
-    <h2> Cambie su contraseña </h2>
+<div class="col-md-12">
     <div class="row">
         <form id="frm">
             <div class="col-lg-12">
-                Contraseña
-                <input type="password" name="pass" style="margin-bottom:20px" class="form-control" />
+                Usuario
+                <input type="text" name="user" style="margin-bottom:20px" class="form-control" />
             </div>
             <div class="col-lg-12">
-                Reptir Contraseña
-                <input type="password" name="passRepeat" style="margin-bottom:20px" class="form-control" />
+                Contraseña
+                <input type="password" name="pass" style="margin-bottom:20px" class="form-control" placeholder="por ahora poner admin" />
             </div>
             <div class="col-lg-12" style="text-align:end">
-                <input type="submit" class="btn btn-success" value="Entrar" style="margin-bottom:20px" />
+                <input type="submit" class="btn btn-success" value="Agregar" style="margin-bottom:20px" />
             </div>
         </form>
 
     </div>
 </div>
-<div class="col-md-4"></div>
 
 
 @section scripts
@@ -32,12 +29,12 @@
     $(document).ready(function () {
         $( "#frm" ).submit(function (e) {
             e.preventDefault();
-            url = "@Url.Content("~/Login/SessionEnter")";
+            url = "@Url.Content("~/Agregar/SessionAdd")";
             parametros = $( this ).serialize();
 
             $.post(url, parametros, function (data) {
-                if (data == "Logueado correctamente!") {
-                    document.location.href = "@Url.Content("~/Tabla/Index")";
+                if (data == "Usuario Agregado") {
+                    document.location.href = "@Url.Content("~/Agregar/Index")";
                 }
                 else {
                     alert(data)
