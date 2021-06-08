@@ -32,7 +32,8 @@ namespace Refugio.Filters
             }
             if (oUser?.USUARIO != "admin")
             {
-                if (filterContext.Controller is LoginController is true)
+                
+                if (filterContext.Controller is AgregarController is true)
                 {
                     filterContext.HttpContext.Response.Redirect("~/Tabla/index");
                 }
