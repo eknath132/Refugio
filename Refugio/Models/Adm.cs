@@ -17,5 +17,6 @@ namespace Refugio.Models
         public int ID { get; set; }
         public string USUARIO { get; set; }
         public string PASS { get; set; }
+        public string EMAIL { get; set; }
     }
 }

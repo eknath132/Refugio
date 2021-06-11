@@ -12,6 +12,7 @@
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="USUARIO" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="PASS" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Gatos">
           <Key>
@@ -42,6 +43,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="USUARIO" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="PASS" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Gatos">
           <Key>
@@ -62,6 +64,7 @@
           <EntitySetMapping Name="Adm">
             <EntityTypeMapping TypeName="refugioModel.Adm">
               <MappingFragment StoreEntitySet="Adm">
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
                 <ScalarProperty Name="PASS" ColumnName="PASS" />
                 <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
                 <ScalarProperty Name="ID" ColumnName="ID" />

@@ -18,6 +18,8 @@ namespace Refugio.Models.ViewModels
         [Display(Name = " Raza")]
         public string RAZA { get; set; }
         [Required]
+        [StringLength(10)]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "* Solo se permiten números.")]
         [Display(Name = "Edad")]
         public int EDAD { get; set; }
         [Required]
