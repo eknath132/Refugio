@@ -21,6 +21,7 @@ namespace Refugio.Controllers
                         {
                             ID = d.ID,
                             USUARIO = d.USUARIO,
+                            EMAIL= d.EMAIL,
                         }).ToList();
             }
             return View(list);
@@ -30,7 +31,7 @@ namespace Refugio.Controllers
         {
             return View();
         }
-        public ActionResult SessionAdd(string user, string pass)
+        public ActionResult SessionAdd(string user,string email, string pass)
         {
             string ePass = Encrypt.GetSHA256(pass);
 
@@ -43,8 +44,9 @@ namespace Refugio.Controllers
                     {
                         
                             var oUser = new Adm();
-                            oUser.ID = 2; 
+                            oUser.ID = 4; 
                             oUser.USUARIO = user;
+                            oUser.EMAIL = email;
                             oUser.PASS = ePass;
                             db.Adm.Add(oUser);
                             db.SaveChanges();
