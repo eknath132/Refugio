@@ -243,6 +243,7 @@
     <Content Include="Views\Agregar\Index.cshtml" />
     <Content Include="Views\Agregar\Nuevo.cshtml" />
     <Content Include="Views\Access\Recover.cshtml" />
+    <Content Include="Views\Agregar\EliminarUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

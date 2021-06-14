@@ -10,21 +10,16 @@ namespace Refugio.Models.ViewModels
     {
         public int ID { get; set; }
         [Required]
-        [StringLength(30)]
         [Display(Name =" Nombre")]
         public string NOMBRE { get; set; }
         [Required]
-        [StringLength(30)]
         [Display(Name = " Raza")]
         public string RAZA { get; set; }
         [Required]
-        [StringLength(10)]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "* Solo se permiten números.")]
         [Display(Name = "Edad")]
         public int EDAD { get; set; }
         [Required]
-        [StringLength(1)]
-        [Display(Name = " Adoptado")]
+        [Display(Name = " Castrado")]
         public string CASTRADO { get; set; }
     }
 }

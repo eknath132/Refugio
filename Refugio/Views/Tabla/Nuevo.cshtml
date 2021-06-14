@@ -28,7 +28,7 @@
              <br />
              @Html.DropDownListFor(d => d.CASTRADO, new List<SelectListItem>
                { new SelectListItem{Text="Si", Value="S"},
-                 new SelectListItem{Text="No", Value="N"}}, "Elija una opción", new {@class="form-select" })
+                 new SelectListItem{Text="No", Value="N"}}, "Elija una opción", new {@class="form-control" })
              @Html.ValidationMessageFor(d => d.CASTRADO, null, new { @class = "messageError" })
              <br />
          </div>

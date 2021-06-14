@@ -44,7 +44,7 @@ namespace Refugio.Controllers
                     {
                         
                             var oUser = new Adm();
-                            oUser.ID = 4; 
+                            oUser.ID = 2; 
                             oUser.USUARIO = user;
                             oUser.EMAIL = email;
                             oUser.PASS = ePass;
@@ -62,6 +62,19 @@ namespace Refugio.Controllers
             {
                 return Content("Ocurrio un error" + ex.Message);
             }
+        }
+        [HttpGet]
+
+        public ActionResult EliminarUsuario(int id)
+        {
+            using (refugioEntities db = new refugioEntities())
+            {
+                var user = db.Adm.Find(id);
+                db.Adm.Remove(user);
+                db.SaveChanges();
+            }
+
+            return Redirect("~/Agregar/Index");
         }
     }
 }

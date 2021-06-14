@@ -5,7 +5,10 @@
 <div class="col-md-4"></div>
 
 <div class="col-md-4">
-    <h2> Cambie su contraseña </h2>
+    <div class="col-lg-12">
+        <h2> Cambie su contraseña</h2>
+    </div>
+
     <div class="row">
         <form id="frm">
             <div class="col-lg-12">
@@ -23,12 +26,12 @@
 
     </div>
 </div>
-<div class="col-md-4"></div>
+    <div class="col-md-4"></div>
 
 
-@section scripts
+    @section scripts
 {
-    <script>
+        <script>
     $(document).ready(function () {
         $( "#frm" ).submit(function (e) {
             e.preventDefault();
@@ -45,6 +48,6 @@
             })
         })
     })
-    </script>
-}
+        </script>
+    }
 

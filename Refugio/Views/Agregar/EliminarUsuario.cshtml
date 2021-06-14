@@ -1,0 +1,32 @@
+﻿@model  Refugio.Models.SessionLoguin.ListSession
+@{
+    ViewBag.Title = "Eliminar Usuario";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("EliminarUsuario", "Agregar", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(d => d.ID)
+            <div>
+                @Html.LabelFor(d => d.USUARIO)
+                @Html.TextBoxFor(d => d.USUARIO, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.USUARIO, null, new { @class = "messageError" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.PASS)
+                @Html.TextBoxFor(d => d.PASS, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.PASS, null, new { @class = "messageError" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.EMAIL)
+                @Html.TextBoxFor(d => d.EMAIL, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.EMAIL, null, new { @class = "messageError" })
+            </div>
+        </div>
+        <div style="text-align:right; margin:15px">
+            <input value="Guardar" class="btn btn-primary" type="submit" />
+        </div>
+    </div>
+}
